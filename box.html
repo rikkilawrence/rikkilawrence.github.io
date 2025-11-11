@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JS Bin</title>
+    <style>
+      img {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        left: 650px;
+        top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="image"
+      src="https://upload.wikimedia.org/wikipedia/commons/4/48/Roblox_Logo_2021.png"
+    />
+  </body>
+</html>
+<script>
+  var x = 100;
+  var y = 100;
+  var speedx = 1;
+  var speedy = 2;
+
+  setInterval(boxMover, 10);
+  function boxMover() {
+    document.getElementById("image").style.top = y + "px";
+    document.getElementById("image").style.left = x + "px";
+    x = x + speedx;
+    y = y + speedy;
+
+    if (x < 0) {
+      speedx = -speedx;
+    }
+
+    if (x > 1000) {
+      speedx = -speedx;
+    }
+    if (y < 0) {
+      speedy = -speedy;
+    }
+
+    if (y > 1000) {
+      speedy = -speedy;
+    }
+  }
+</script>
